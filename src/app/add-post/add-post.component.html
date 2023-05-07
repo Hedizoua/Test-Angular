@@ -1,0 +1,73 @@
+<section>
+    <div class="container" style="padding-top: 2%;">
+
+        <div class="card mb-4">
+            <div>
+                <br>
+                <h3 class="mb-0 text-center">Add Article</h3>
+            </div>
+            <div class="card-body">
+
+
+                <form [formGroup]="listform" (ngSubmit)="add()">
+                    
+                    <div class="row mb-4">
+
+
+                        <div class="col">
+                            <div class="form-outline">
+                                <input type="text" id="form6Example2" class="form-control" formControlName="title"
+                                    required
+                                    [ngClass]="{'is-valid ': submitted && !listform.get('title')?.errors , 'is-invalid':submitted && !listform.get('title')?.errors}">
+                                <label class="form-label" for="form6Example2">Title </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row mb-4">
+
+
+                        <div class="col">
+                            <div class="form-outline">
+                                <input type="text" id="form6Example2" class="form-control" formControlName="category"
+                                    required
+                                    [ngClass]="{'is-valid ': submitted && !listform.get('category')?.errors , 'is-invalid':submitted && !listform.get('category')?.errors}">
+                                <label class="form-label" for="form6Example2">Category</label>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="form-group">
+                        <label for="exampleFormControlTextarea1">Description</label>
+                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"
+                            formControlName="description" required
+                            [ngClass]="{'is-valid ': submitted && !listform.get('description')?.errors , 'is-invalid':submitted && !listform.get('description')?.errors}"></textarea>
+                    </div>
+
+
+                    <br>
+                    <hr class="my-4" />
+
+                    <h5 class="mb-4">Date</h5>
+                    <label class="form-label" for="form6Example2"></label><br><br>
+
+                    <input type="date" url required id="form6Example2" class="form-control" formControlName="date"
+                        required
+                        [ngClass]="{'is-valid ': submitted && !listform.get('date')?.errors , 'is-invalid':submitted && !listform.get('date')?.errors}"><br><br>
+
+
+
+                    <div class="form-group">
+                        <button class="btn btn-warning btn-lg btn-block " type="submit">
+                            Add Article
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+
+</section>
